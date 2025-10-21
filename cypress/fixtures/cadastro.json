@@ -1,0 +1,7 @@
+{
+    "nome": "Teste",
+    "email": "teste@teste.com",
+    "email_invalido": "hjsdfghiasjdh.com",
+    "senha": "teste123456",
+    "senha_invalida": "12345"
+}
