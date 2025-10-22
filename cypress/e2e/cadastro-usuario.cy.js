@@ -8,18 +8,18 @@ describe('Cadastro de usuário', () => {
         cy.visit('/register')
     })
 
-    it('Campos obrigatórios em branco', () => {
+    it('Formulário vazio', () => {
         cy.get('#btnRegister').click()
         cy.get('#errorMessageFirstName').should('be.visible').should('contain', 'O campo nome deve ser prenchido')
     });
 
-    it('E-mail e Senha em branco', () => {
+    it('E-mail e Senha vazios', () => {
         cy.get('#user').type(cadastroData.nome)
         cy.get('#btnRegister').click()
         cy.get('#errorMessageFirstName').should('be.visible').should('contain', 'O campo e-mail deve ser prenchido corretamente')
     });
 
-    it('Senha em branco', () => {
+    it('Senha vazia', () => {
         cy.get('#user').type(cadastroData.nome)
         cy.get('#email').type(cadastroData.email)
         cy.get('#btnRegister').click()
@@ -34,14 +34,14 @@ describe('Cadastro de usuário', () => {
         cy.get('#errorMessageFirstName').should('be.visible').should('contain', 'O campo senha deve ter pelo menos 6 dígitos')
     })
 
-    it('Nome em branco', () => {
+    it('Nome vazio', () => {
         cy.get('#email').type(cadastroData.email)
         cy.get('#password').type(cadastroData.senha)
         cy.get('#btnRegister').click()
         cy.get('#errorMessageFirstName').should('be.visible').should('contain', 'O campo nome deve ser prenchido')
     });
 
-    it('Email em branco', () => {
+    it('Email vazio', () => {
         cy.get('#user').type(cadastroData.nome)
         cy.get('#password').type(cadastroData.senha)
         cy.get('#btnRegister').click()
@@ -63,5 +63,6 @@ describe('Cadastro de usuário', () => {
         cy.get('#btnRegister').click()
         cy.url().should('contain', '/my-account')
         cy.get('#swal2-title').should('be.visible').should('contain', 'Cadastro realizado!')
+        cy.get('#swal2-html-container').should('be.visible').should('contain', 'Bem-vindo Teste')
     });
 })
