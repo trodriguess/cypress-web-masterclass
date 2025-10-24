@@ -4,7 +4,7 @@ Cypress.Commands.add('acessarLogin', () => {
     cy.visit('/login')
 });
 
-Cypress.Commands.add('preencherEmail', (email) => {
+Cypress.Commands.add('preencherEmailLogin', (email) => {
     cy.get('#user')
         .type(email)
 });

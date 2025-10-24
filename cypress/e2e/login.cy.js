@@ -9,7 +9,7 @@ describe('Login', () => {
     })
 
     it('Login com sucesso', () => {
-        cy.preencherEmail(loginData.email)
+        cy.preencherEmailLogin(loginData.email)
         cy.preencherSenha(loginData.senha)
         cy.clicarLogin()
         cy.url().should('include', '/my-account')
@@ -28,20 +28,20 @@ describe('Login', () => {
     });
 
     it('Senha vazia', () => {
-        cy.preencherEmail(loginData.email)
+        cy.preencherEmailLogin(loginData.email)
         cy.clicarLogin()
         cy.validarErro('Senha inválida.')
     });
 
     it('E-mail inválido', () => {
-        cy.preencherEmail(loginData.email_invalido)
+        cy.preencherEmailLogin(loginData.email_invalido)
         cy.preencherSenha(loginData.senha)
         cy.clicarLogin()
         cy.validarErro('E-mail inválido.')
     });
 
     it('Senha inválida', () => {
-        cy.preencherEmail(loginData.email)
+        cy.preencherEmailLogin(loginData.email)
         cy.preencherSenha(loginData.senha_invalida)
         cy.clicarLogin()
         cy.validarErro('Senha inválida.')
