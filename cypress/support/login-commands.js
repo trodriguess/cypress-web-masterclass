@@ -4,14 +4,14 @@ Cypress.Commands.add('acessarLogin', () => {
     cy.visit('/login')
 });
 
-Cypress.Commands.add('preencherEmailLogin', (email) => {
+Cypress.Commands.add('preencherEmailLogin', () => {
     cy.get('#user')
-        .type(email)
+        .type(Credential.user)
 });
 
-Cypress.Commands.add('preencherSenha', (senha) => {
+Cypress.Commands.add('preencherSenha', () => {
     cy.get('#password')
-        .type(senha)
+        .type(Credential.password)
 });
 
 Cypress.Commands.add('clicarLogin', () => {
