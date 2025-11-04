@@ -11,23 +11,11 @@ Cypress.Commands.add('clicarFinalizarCompra', () => {
             .click()
 });
 
-Cypress.Commands.add('validaVariasMensagensErro', (indice, mensagem) => {
-    cy.get('.errorLabel')
-        .eq(indice)
-            .should('be.visible')
-                .should('contain', mensagem)
-});
-
-Cypress.Commands.add('validaMensagemErro', (mensagem) => {
-    cy.get('#errorMessageFirstName')
+Cypress.Commands.add('validaMensagem', (mensagem) => {
+    cy.contains(mensagem)
         .should('be.visible')
-            .should('contain', mensagem)
-});
-
-Cypress.Commands.add('validaMensagem', (selector, mensagem) => {
-    cy.get(selector)
-        .should('be.visible')
-            .should('contain', mensagem)
+            .should('exist')
+    
 });
 
 Cypress.Commands.add('preencheNome', (nome) => {

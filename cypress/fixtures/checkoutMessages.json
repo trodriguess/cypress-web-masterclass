@@ -1,0 +1,13 @@
+{
+    "nameError": "O campo First Name deve ser prenchido",
+    "lastNameError": "O campo Last Name deve ser prenchido",
+    "companyError": "O campo Company deve ser prenchido",
+    "emailError": "O campo E-mail deve ser prenchido ou é inválido",
+    "contryError": "O campo Country deve ser prenchido",
+    "cityError": "O campo City deve ser prenchido",
+    "zipCodeError": "O campo Zip Code deve ser prenchido",
+    "addressError": "O campo Address deve ser prenchido",
+    "notesError": "O campo Additional Notes deve ser prenchido",
+    "successRegister": "Billings Information registred with success!",
+    "successOrder": "Order success!"
+}
